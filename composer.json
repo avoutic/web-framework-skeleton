@@ -1,0 +1,25 @@
+{
+    "name": "avoutic/web-framework-example",
+    "description": "WebFramework example project",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "security",
+        "example"
+    ],
+    "homepage": "https://github.com/avoutic/web-framework-example/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Avoutic",
+            "email": "avoutic@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/avoutic/web-framework-example/issues",
+        "source": "https://github.com/avoutic/web-framework-example"
+    },
+    "require": {
+        "avoutic/web-framework": "^4.0"
+    }
+}
