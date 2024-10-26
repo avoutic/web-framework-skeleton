@@ -1,13 +1,14 @@
 {
-    "name": "avoutic/web-framework-example",
-    "description": "WebFramework example project",
+    "name": "avoutic/web-framework-skeleton",
+    "description": "WebFramework skeleton project",
     "type": "project",
     "keywords": [
         "framework",
         "security",
+        "skeleton",
         "example"
     ],
-    "homepage": "https://github.com/avoutic/web-framework-example/",
+    "homepage": "https://github.com/avoutic/web-framework-skeleton/",
     "license": "MIT",
     "authors": [
         {
@@ -16,10 +17,45 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/avoutic/web-framework-example/issues",
-        "source": "https://github.com/avoutic/web-framework-example"
+        "issues": "https://github.com/avoutic/web-framework-skeleton/issues",
+        "source": "https://github.com/avoutic/web-framework-skeleton"
     },
     "require": {
-        "avoutic/web-framework": "^5.0"
+        "avoutic/web-framework": "^8"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Actions\\": "actions/",
+            "App\\Routes\\": "routes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WebFramework\\PHPStan\\": "vendor/avoutic/web-framework/phpstan/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"copy('vendor/avoutic/web-framework/htdocs/index.php', 'htdocs/index.php');\"",
+            "mkdir -p scripts",
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_init.php', 'scripts/db_init.php');\"",
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_update.php', 'scripts/db_update.php');\"",
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_version.php', 'scripts/db_version.php');\"",
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/sanity_check.php', 'scripts/sanity_check.php');\""
+        ],
+        "post-update-cmd": [
+            "php -r \"copy('vendor/avoutic/web-framework/htdocs/index.php', 'htdocs/index.php');\"",
+            "mkdir -p scripts",
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_init.php', 'scripts/db_init.php');\"",
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_update.php', 'scripts/db_update.php');\"",
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_version.php', 'scripts/db_version.php');\"",
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/sanity_check.php', 'scripts/sanity_check.php');\""
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
     }
 }
