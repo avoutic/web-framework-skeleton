@@ -10,8 +10,7 @@
 
 return [
     'versions' => [
-        'supported_framework' => 8,
-        'required_app_db' => 0,
+        'supported_framework' => 9,
     ],
     'production' => true,
     'database_enabled' => true,
@@ -31,6 +30,7 @@ return [
     ],
     'definition_files' => [
         '../vendor/avoutic/web-framework/definitions/web_framework_definitions.php',
+        '../vendor/avoutic/web-framework-mysql/definitions/definitions.php',
         'web_framework_overrides.php',
         'app_definitions.php',
     ],

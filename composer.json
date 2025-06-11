@@ -21,7 +21,8 @@
         "source": "https://github.com/avoutic/web-framework-skeleton"
     },
     "require": {
-        "avoutic/web-framework": "^8"
+        "avoutic/web-framework": "^9.2",
+        "avoutic/web-framework-mysql": "^1"
     },
     "autoload": {
         "psr-4": {
@@ -39,18 +40,12 @@
         "post-install-cmd": [
             "php -r \"copy('vendor/avoutic/web-framework/htdocs/index.php', 'htdocs/index.php');\"",
             "mkdir -p scripts",
-            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_init.php', 'scripts/db_init.php');\"",
-            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_update.php', 'scripts/db_update.php');\"",
-            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_version.php', 'scripts/db_version.php');\"",
-            "php -r \"copy('vendor/avoutic/web-framework/scripts/sanity_check.php', 'scripts/sanity_check.php');\""
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/framework.php', 'framework');\""
         ],
         "post-update-cmd": [
             "php -r \"copy('vendor/avoutic/web-framework/htdocs/index.php', 'htdocs/index.php');\"",
             "mkdir -p scripts",
-            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_init.php', 'scripts/db_init.php');\"",
-            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_update.php', 'scripts/db_update.php');\"",
-            "php -r \"copy('vendor/avoutic/web-framework/scripts/db_version.php', 'scripts/db_version.php');\"",
-            "php -r \"copy('vendor/avoutic/web-framework/scripts/sanity_check.php', 'scripts/sanity_check.php');\""
+            "php -r \"copy('vendor/avoutic/web-framework/scripts/framework.php', 'framework');\""
         ]
     },
     "config": {
