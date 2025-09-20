@@ -3,7 +3,7 @@
 namespace App\Actions;
 
 use App\Core\SkeletonService;
-use WebFramework\Core\LatteRenderService;
+use WebFramework\Presentation\LatteRenderService;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest as Request;

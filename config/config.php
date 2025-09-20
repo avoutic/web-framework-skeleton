@@ -9,11 +9,7 @@
  */
 
 return [
-    'versions' => [
-        'supported_framework' => 9,
-    ],
     'production' => true,
-    'database_enabled' => true,
     'security' => array(
         'hmac_key' => 'CHANGETHISTO20CHARRANDOMSTRING',
         'crypt_key' => 'CHANGETHISTO20CHARRANDOMSTRING',
@@ -22,6 +18,7 @@ return [
     'sanity_check_modules' => [
         WebFramework\SanityCheck\RequiredAuth::class => [
             'db_config.main.php',
+            'redis.php',
         ],
     ],
     'sender_core' => [
@@ -29,8 +26,9 @@ return [
         'assert_recipient' => 'your@email.here',
     ],
     'definition_files' => [
-        '../vendor/avoutic/web-framework/definitions/web_framework_definitions.php',
+        '../vendor/avoutic/web-framework/definitions/definitions.php',
         '../vendor/avoutic/web-framework-mysql/definitions/definitions.php',
+        '../vendor/avoutic/web-framework-redis/definitions/definitions.php',
         'web_framework_overrides.php',
         'app_definitions.php',
     ],

@@ -5,11 +5,12 @@
  * classes or interfaces from the WebFramework itself.
  *
  * Most often the Interfaces that default to a Null implementation such as:
- *  - Core\Cache
- *  - Core\MailService
- *  - Core\ReportFunction
- *  - Core\AuthenticationService
- *  - Core\BlacklistService
+ *  - Cache\Cache
+ *  - Database\Database
+ *  - Diagnostics\ReportFunction
+ *  - Mail\MailService
+ *  - Security\AuthenticationService
+ *  - Security\BlacklistService
  */
 
 namespace WebFramework;
@@ -21,10 +22,11 @@ return [
 
     /**
      * Examples
-    Core\Cache::class => DI\autowire(Core\RedisCache::class),
-    Core\MailService::class => DI\get(\App\Core\DatabaseMailService::class),
-    Core\RenderService::class => DI\get(\App\Core\AppRenderService::class),
-    Core\ReportFunction::class => DI\get(Core\MailReportFunction::class),
+    Cache\Cache::class => DI\get(Redis\RedisCache::class),
+    Database\Database::class => DI\get(Mysql\MysqliDatabase::class),
+    Mail\MailService::class => DI\get(\App\Core\DatabaseMailService::class),
+    Presentation\RenderService::class => DI\get(\App\Core\AppRenderService::class),
+    Diagnostics\ReportFunction::class => DI\get(Diagnostics\MailReportFunction::class),
 
     Security\AuthenticationService::class => DI\get(Security\DatabaseAuthenticationService::class),
     Security\BlacklistService::class => DI\get(Security\DatabaseBlacklistService::class),
