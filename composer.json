@@ -21,9 +21,9 @@
         "source": "https://github.com/avoutic/web-framework-skeleton"
     },
     "require": {
-        "avoutic/web-framework": "^10",
-        "avoutic/web-framework-mysql": "^2",
-        "avoutic/web-framework-redis": "^2"
+        "avoutic/web-framework": "^11.0",
+        "avoutic/web-framework-mysql": "^3",
+        "avoutic/web-framework-redis": "^3"
     },
     "autoload": {
         "psr-4": {
@@ -39,12 +39,12 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "php -r \"copy('vendor/avoutic/web-framework/htdocs/index.php', 'htdocs/index.php');\"",
+            "php -r \"copy('vendor/avoutic/web-framework/public/index.php', 'public/index.php');\"",
             "mkdir -p scripts",
             "php -r \"copy('vendor/avoutic/web-framework/scripts/framework.php', 'framework');\""
         ],
         "post-update-cmd": [
-            "php -r \"copy('vendor/avoutic/web-framework/htdocs/index.php', 'htdocs/index.php');\"",
+            "php -r \"copy('vendor/avoutic/web-framework/public/index.php', 'public/index.php');\"",
             "mkdir -p scripts",
             "php -r \"copy('vendor/avoutic/web-framework/scripts/framework.php', 'framework');\""
         ]
